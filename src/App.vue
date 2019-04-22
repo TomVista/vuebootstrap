@@ -1,23 +1,21 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
-</script>
+  import Vue from 'vue';
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+import {loading} from './loading';
+Vue.prototype.$loading = loading;
+
+  export default {
+    name: 'App',
+    methods: {},
+    mounted() {
+      this.$loading();
+    }
+  };
+</script>
