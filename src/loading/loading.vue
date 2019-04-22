@@ -4,7 +4,7 @@
       <div class='m-auto spinner-border' :class='"text-"+type' role='status'>
         <span class="sr-only">Loading...</span>
       </div>
-      <div class='text-center' style='color:white'>{{message}}</div>
+      <div class='text-center text-white'>{{message}}</div>
     </div>
   </topCover>
 </template>

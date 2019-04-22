@@ -15,7 +15,7 @@ Vue.prototype.$loading = Loading;
     name: 'App',
     methods: {},
     mounted() {
-      this.$loading({message:'请稍后...',type:'danger',mask:false,fullScreen:false,top:'10px'});
+      this.$loading({message:'请稍后...',type:'danger',mask:true,fullScreen:true,top:'30px'});
     }
   };
 </script>

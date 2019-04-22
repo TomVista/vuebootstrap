@@ -110,8 +110,7 @@
 
   .mask {
     top: 0;
-    opacity: 0.5;
-    background-color: #000000;
+    background-color:rgba(0,0,0,0.5)
   }
 
   .fullScreen {
