@@ -12,14 +12,14 @@ const topCoverComponent = {
 }
 
 /* topCoverConstructor */
-var _topCoverConstructor = Vue.extend(topCoverTemplate);
+var TopCoverConstructor = Vue.extend(topCoverTemplate);
 
 /**
  * 
- * @param {{mask:Boolean,fullScreen: Boolean,horizontalCenter: Boolean,verticalCenter: Boolean,top:  Number|String,bottom:  Number|String,left: Number|String,right: Number|String}} options 
+ * @param {{mask:boolean,fullScreen: boolean,horizontalCenter: boolean,verticalCenter: boolean,top:  number|string,bottom:  number|string,left: number|string,right: number|string}} options 
  */
 function topCover(options) {
-  var _topCover = new _topCoverConstructor({
+  var _topCover = new TopCoverConstructor({
     propsData: options
   });
   _topCover.$mount();

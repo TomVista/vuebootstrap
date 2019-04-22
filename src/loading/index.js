@@ -3,16 +3,23 @@ import loadingTemplate from './loading.vue';
 
 /* loadingComponent */
 const loadingComponent = {
-  install: function (Vue) {
+  /**
+   * @param {import('vue').VueConstructor } Vue 
+   */
+  install: function(Vue) {
     Vue.component('loading', loadingTemplate);
   }
 }
 
 /* loadingConstructor */
-const _loadingConstructor = Vue.extend(loadingTemplate);
+const LoadingConstructor = Vue.extend(loadingTemplate);
 
-function loading(options) {
-  var _loading = new _loadingConstructor({
+/**
+ * 
+ * @param {{message:string,type:string,mask:boolean,fullScreen: boolean,horizontalCenter: boolean,verticalCenter: boolean,top:  number|string,bottom:  number|string,left: number|string,right: number|string}} options 
+ */
+function Loading(options) {
+  var _loading = new LoadingConstructor({
     propsData: options
   });
   _loading.$mount();
@@ -23,5 +30,5 @@ function loading(options) {
 export default loadingComponent;
 
 export {
-  loading
+  Loading
 }

@@ -8,14 +8,14 @@
 <script>
   import Vue from 'vue';
 
-import {loading} from './loading';
-Vue.prototype.$loading = loading;
+import {Loading} from './loading';
+Vue.prototype.$loading = Loading;
 
   export default {
     name: 'App',
     methods: {},
     mounted() {
-      this.$loading();
+      this.$loading({message:'请稍后...',type:'danger',mask:false,fullScreen:false,top:'10px'});
     }
   };
 </script>

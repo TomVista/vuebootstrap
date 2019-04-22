@@ -1,10 +1,10 @@
 <template>
-  <topCover class="d-flex justify-content-center align-items-center" :mask='true' :fullScreen='true'>
-    <div class="d-flex flex-column justify-content-center">
-      <div class="m-auto spinner-border text-primary" role="status">
+  <topCover v-if='visible' class='d-flex justify-content-center align-items-center' :mask='mask' :fullScreen='fullScreen' :horizontalCenter='horizontalCenter' :verticalCenter='verticalCenter' :top='top' :bottom='bottom' :left='left' :right='right'>
+    <div class='d-flex flex-column justify-content-center'>
+      <div class='m-auto spinner-border' :class='"text-"+type' role='status'>
         <span class="sr-only">Loading...</span>
       </div>
-      <div class="text-center" style="color:white">{{message}}</div>
+      <div class='text-center' style='color:white'>{{message}}</div>
     </div>
   </topCover>
 </template>
@@ -18,24 +18,58 @@
         type: String,
         default: "Loading..."
       },
-      istrue: {
+      type: {
+        type: String,
+        default: "primary"
+      },
+      mask: {
+        type: Boolean,
+        default: true
+      },
+      fullScreen: {
+        type: Boolean,
+        default: true
+      },
+      horizontalCenter: {
         type: Boolean,
         default: false
+      },
+      verticalCenter: {
+        type: Boolean,
+        default: false
+      },
+      top: {
+        type: [Number, String],
+        default: 'default'
+      },
+      bottom: {
+        type: [Number, String],
+        default: 'default'
+      },
+      left: {
+        type: [Number, String],
+        default: 'default'
+      },
+      right: {
+        type: [Number, String],
+        default: 'default'
       }
     },
-    computed: {
-      Message() {
-        return this.message;
+    data() {
+      return {
+        visible: true
       }
     },
     methods: {
       hidden() {
-        setTimeout(() => {
-          this.visible = false;
-          this.$el.parentNode.removeChild(this.$el);
-        }, 3000);
+        this.visible = false;
+      },
+      show() {
+        this.visible = true;
       }
     },
-    mounted() {}
+    mounted() {
+      setTimeout(this.hidden, 2000);
+    }
   };
 </script>
